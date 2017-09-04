@@ -404,6 +404,14 @@ dedicated amp field: amp role
 
 
 [float]
+=== customADI
+
+type: text
+
+custom ADI field
+
+
+[float]
 === message
 
 type: text

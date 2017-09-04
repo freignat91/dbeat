@@ -99,6 +99,7 @@ func (a *dbeat) startReadingLogs(ID string, data *ContainerData) {
 			"stack_name":      data.stackName,
 			"node_id":         data.nodeID,
 			"role":            data.role,
+			"customADI":       data.customADILabel,
 			"message":         slog,
 		}
 		a.client.PublishEvent(event)

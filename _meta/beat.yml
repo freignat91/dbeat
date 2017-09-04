@@ -6,6 +6,9 @@ dbeat:
   # Defines how often the stat is sent to the output
   period: ${PERIOD:3s}
 
+  # REST Server port (to check health)
+  rest_port: 3000
+
   # Defines the docker url
   docker_url: ${DOCKER_SOCKET:unix:///var/run/docker.sock}
 
@@ -23,7 +26,10 @@ dbeat:
 
   # event types enqabled or not
   logs: true
-  net: true
-  memory: true
-  io: true
-  cpu: true
+  net: false
+  memory: false
+  io: false
+  cpu: false
+
+  #custom ADI label name
+  custom_adi_label_name : io.adi.customlabel

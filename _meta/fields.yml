@@ -56,6 +56,11 @@
       description: >
         dedicated amp field: amp role
 
+    - name: "customADI"
+      type: text
+      description: >
+        custom ADI field
+
     - name: "message"
       type: text
       description: >

@@ -29,8 +29,8 @@ make create-image
 or directly use the docker hub image, pulling it:
 
 ```
-docker pull freignat/dbeat:0.0.1
-(or tag latest)
+docker pull freignat/dbeat:latest
+(or other tags see: https://hub.docker.com/r/freignat91/dbeat/tags/
 ```
 
 dbeat settings can be updated in the file dbeat-confimage.yml, before creating the image
@@ -41,14 +41,22 @@ To run dbeat in a docker swarm context:
 
 ```
 docker service create --with-registry-auth --network aNetwork --name dbeat \
-    --mode global \
-    --mount type=bind,source=/var/run/docker.sock,target=/var/run/docker.sock \
-    freignat91/dbeat
+  --mode global \
+  --mount source=dbeat,destination=/containers \
+  --mount type=bind,source=/var/run/docker.sock,target=/var/run/docker.sock \
+  freignat91/dbeat
 ```
 
 Where the network "aNetwork" is the same than Elasticsearch or Logstash one
 
+To run dbeat as a simple container
 
+```
+docker run --name dbeat \
+  --mount source=dbeat,destination=/containers \
+  --mount type=bind,source=/var/run/docker.sock,target=/var/run/docker.sock \
+  freignat91/dbeat
+```
 
 ### Update
 

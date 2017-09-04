@@ -7,6 +7,7 @@ import "time"
 
 // Config dbeat config
 type Config struct {
+	RESTPort           int           `config:"rest_port"`
 	Period             time.Duration `config:"period"`
 	DockerURL          string        `config:"docker_url"`
 	TLS                bool          `config:"tls"`
@@ -19,10 +20,12 @@ type Config struct {
 	Memory             bool          `config:"memory"`
 	IO                 bool          `config:"io"`
 	CPU                bool          `config:"cpu"`
+	CustomADILabelName string        `config:"custom_adi_label_name"`
 }
 
 //DefaultConfig dbeat default config
 var DefaultConfig = Config{
+	RESTPort:           3000,
 	Period:             3 * time.Second,
 	DockerURL:          "unix:///var/run/docker.sock",
 	Logs:               true,

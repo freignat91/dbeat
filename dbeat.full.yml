@@ -6,6 +6,9 @@ dbeat:
   # Defines how often the stat is sent to the output
   period: ${PERIOD:3s}
 
+  # REST Server port (to check health)
+  rest_port: 3000
+
   # Defines the docker url
   docker_url: ${DOCKER_SOCKET:unix:///var/run/docker.sock}
 
@@ -23,10 +26,13 @@ dbeat:
 
   # event types enqabled or not
   logs: true
-  net: true
-  memory: true
-  io: true
-  cpu: true
+  net: false
+  memory: false
+  io: false
+  cpu: false
+
+  #custom ADI label name
+  custom_adi_label_name : io.adi.customlabel
 
 #================================ General ======================================
 
@@ -133,7 +139,7 @@ output.elasticsearch:
 
   # Optional index name. The default is "dbeat" plus date
   # and generates [dbeat-]YYYY.MM.DD keys.
-  #index: "dbeat-%{[beat.version]}-%{+yyyy.MM.dd}"
+  #index: "dbeat-%{+yyyy.MM.dd}"
 
   # Optional ingest node pipeline. By default no pipeline will be used.
   #pipeline: ""
@@ -173,8 +179,6 @@ output.elasticsearch:
   #template.enabled: true
 
   # Template name. By default the template name is dbeat.
-  # The version of the beat will always be appended to the given name
-  # so the final name is dbeat-%{[beat.version]}.
   #template.name: "dbeat"
 
   # Path to template file
