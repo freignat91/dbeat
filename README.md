@@ -20,7 +20,7 @@ It publishes, memory, net, io, cpu metrics and all logs.
 
 Prerequisite:
 - golang 1.7 min installed
-- glide install 0.!@ min installed
+- glide install 0.12 min installed
 
 Clone the repo in the directory $GOPATH/src/github.com/freignat91/dbeat: 
  - cd $GOPATH/scr/github.com/freignat
