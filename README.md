@@ -18,22 +18,39 @@ It publishes, memory, net, io, cpu metrics and all logs.
 
 ### Build
 
-To build the binary for Docker-beat run the command below. This will generate a binary
-in the same directory with the name dbeat.
+Prerequisite:
+- golang 1.7 min installed
+- glide install 0.!@ min installed
+
+Clone the repo in the directory $GOPATH/src/github.com/freignat91/dbeat: 
+ - cd $GOPATH/scr/github.com/freignat
+ - git clone git@github.com:freignat91/dbeat
+ - cd dbeat
+
+
+Before building if you can update default configuration using file dbeat-confimage.yml and then executing the command:
+```
+make update
+```
+
+To build the dbeat binary in th esame folder, run the command below:
 
 ```
-git clone git@github.com:freignat91/dbeat
-cd dbeat
-make create-image
+make
 ```
+
+To create the dbeat image freignat91/dbeat:latest, run the command bellow:
+
+```
+make create-images
+```
+
 or directly use the docker hub image, pulling it:
-
 ```
 docker pull freignat/dbeat:latest
 (or other tags see: https://hub.docker.com/r/freignat91/dbeat/tags/
 ```
 
-dbeat settings can be updated in the file dbeat-confimage.yml, before creating the image
 
 ### Run
 
