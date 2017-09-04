@@ -1,6 +1,6 @@
 # dbeat
 
-Welcome to dbeat v0.0.1
+Welcome to dbeat v0.0.2
 
 This beat handle both docker logs and metrics in a Swarm cluster context adding meta data as stack, service name to logs/metrics.
 It listen Docker containers events and for each new started container open logs and metrics streams to publish the events.
@@ -10,30 +10,42 @@ It publishes, memory, net, io, cpu metrics and all logs.
 
 ## Getting Started with dbeat
 
-### Requirements
-
-* [Golang](https://golang.org/dl/) 1.7 min
-
-
-
 ### Build
 
-To build the binary for Docker-beat run the command below. This will generate a binary
-in the same directory with the name dbeat.
+Prerequisite:
+- golang 1.7 min installed
+- glide 0.12 min installed
+
+Clone the repo in the directory $GOPATH/src/github.com/freignat91/dbeat:
+ - cd $GOPATH/scr/github.com/freignat
+ - git clone git@github.com:freignat91/dbeat
+ - cd dbeat
+
+
+Before building if you can update default configuration using file `dbeat-confimage.yml` and then executing the command:
+```
+make update
+```
+
+To build the dbeat binary in the same folder, run the command below:
 
 ```
-git clone git@github.com:freignat91/dbeat
-cd dbeat
-make create-image
+make
 ```
+
+To create the dbeat image `freignat91/dbeat:latest`, run the command bellow:
+
+```
+make create-images
+```
+
 or directly use the docker hub image, pulling it:
-
 ```
 docker pull freignat/dbeat:latest
-(or other tags see: https://hub.docker.com/r/freignat91/dbeat/tags/
 ```
+For others tags see: https://hub.docker.com/r/freignat91/dbeat/tags/
 
-dbeat settings can be updated in the file dbeat-confimage.yml, before creating the image
+
 
 ### Run
 
