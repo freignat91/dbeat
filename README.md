@@ -1,6 +1,6 @@
 # dbeat
 
-`WARNING: starting to version 0.0.1 this project has been moved to Axway/elasticsearch-docker-beat github repository`
+`WARNING: starting to version 0.0.2 this project has been moved to Axway/elasticsearch-docker-beat github repository`
 
 Welcome to dbeat v0.0.1
 
