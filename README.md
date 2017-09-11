@@ -1,6 +1,8 @@
 # dbeat
 
-Welcome to dbeat v0.0.2
+`WARNING: starting to version 0.0.1 this project has been moved to Axway/elasticsearch-docker-beat github repository`
+
+Welcome to dbeat v0.0.1
 
 This beat handle both docker logs and metrics in a Swarm cluster context adding meta data as stack, service name to logs/metrics.
 It listen Docker containers events and for each new started container open logs and metrics streams to publish the events.
